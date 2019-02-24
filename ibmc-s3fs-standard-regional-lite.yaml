@@ -1,0 +1,22 @@
+apiVersion: storage.k8s.io/v1
+kind: StorageClass
+metadata:
+  labels:
+    app: ibmcloud-object-storage-plugin
+  name: ibmc-s3fs-standard-regional-lite
+parameters:
+  ibm.io/chunk-size-mb: "16"
+  ibm.io/curl-debug: "false"
+  ibm.io/debug-level: warn
+  ibm.io/iam-endpoint: https://iam.bluemix.net
+  ibm.io/kernel-cache: "true"
+  ibm.io/multireq-max: "20"
+  ibm.io/object-store-endpoint: https://s3.private.us-south.cloud-object-storage.appdomain.cloud
+  ibm.io/object-store-storage-class: NA
+  ibm.io/parallel-count: "2"
+  ibm.io/s3fs-fuse-retry-count: "5"
+  ibm.io/stat-cache-size: "100000"
+  ibm.io/tls-cipher-suite: AESGCM
+provisioner: ibm.io/ibmc-s3fs
+reclaimPolicy: Delete
+volumeBindingMode: Immediate

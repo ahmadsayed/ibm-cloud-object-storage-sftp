@@ -1,0 +1,17 @@
+kind: PersistentVolumeClaim
+apiVersion: v1
+metadata:
+  name: cospvc
+  namespace: default
+  annotations:
+    ibm.io/auto-create-bucket: "false"
+    ibm.io/auto-delete-bucket: "false"
+    ibm.io/bucket: "testcoshassan83"
+    ibm.io/secret-name: "sftp-cos"
+spec:
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: 0.1Gi # Enter a fictitious value
+  storageClassName: ibmc-s3fs-standard-regional-lite
