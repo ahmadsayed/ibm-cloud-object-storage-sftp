@@ -21,4 +21,13 @@ In order to connect IBM kubernetes cluster follow this [Documentation](https://c
 
 #### NOTE: the previous steps works mainly standard cluster, as the provided sotrage classes get the Cloud object storage End Point URL based on the Cluster region, which will not work with lite cluster, to make it work with lite cluster or use specific URL a [new storageclass need to created](https://raw.githubusercontent.com/ahmadsayed/ibm-cloud-object-storage-sftp/master/lite-only/ibmc-s3fs-standard-regional-lite.yaml), insure updating the URL as per the object storage provisioned region
 
-### 
+### End to End Architecture Diagram
+
+As below Kubernetes provide SFTP server and IBM Object storage mounted as using fuse as the storage 
+
+![Architecture diagram](https://raw.githubusercontent.com/ahmadsayed/ibm-cloud-object-storage-sftp/master/images/sftpcos.png)
+
+
+### The below image show and End to End use case for SFTP to Cloud Object Storage using kubernetes lite account
+
+![Demo](https://raw.githubusercontent.com/ahmadsayed/ibm-cloud-object-storage-sftp/master/images/winscp-object-storage.png)
